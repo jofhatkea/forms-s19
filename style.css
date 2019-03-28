@@ -1,0 +1,11 @@
+label,
+input {
+  display: block;
+}
+label,
+input[type="submit"] {
+  margin-top: 20px;
+}
+input[type="submit"] {
+  background: lightblue;
+}

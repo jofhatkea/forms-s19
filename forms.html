@@ -5,26 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
-    <style></style>
+    <style>
+      input:valid + span {
+        content: "✓";
+      }
+      input:invalid + span {
+        content: "✖";
+      }
+    </style>
   </head>
   <body>
+    <h1>XSS</h1>
+    <a href="about.html">Abaout Us</a>
     <section>
       <form>
-        <label for="agree">
-          Do you agree
-        </label>
+        Password:
+        <input
+          type="password"
+          required
+          name="pw"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        />
 
-        <input id="agree" type="checkbox" name="agree" />
         <label>
-          <input type="email" placeholder="E-mail" name="email" />
+          <input required type="email" placeholder="E-mail" name="email" />
+          <span>hi</span>
         </label>
-        <p>Tel</p>
-        <input type="tel" />
-        <p>number</p>
-        <input type="number" />
+        <label>
+          Age: <input type="number" name="age" required minlength="8"
+        /></label>
+        <label
+          >TERMS: <input type="checkbox" value="accepted" name="terms"
+        /></label>
+
+        <select name="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <input type="submit" name="submit" value="Click me" />
       </form>
+
       <h1>HI</h1>
       <h2>Mom</h2>
     </section>
+    <script>
+      const form = document.querySelector("form");
+      const a = document.querySelector("a");
+      const email = form.elements.email;
+
+      email.addEventListener("click", e => {
+        //email.blur();
+      });
+    </script>
   </body>
 </html>
