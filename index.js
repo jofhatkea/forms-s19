@@ -1,3 +1,4 @@
+get();
 function post(newAlbum) {
   fetch("https://music-2ccc.restdb.io/rest/albums", {
     method: "post",
@@ -40,7 +41,6 @@ function showAlbum(album) {
   clone.querySelector("h2").textContent = album.album;
   clone.querySelector("article").dataset.id = album._id;
   clone.querySelector("button").addEventListener("click", e => {
-    //console.log(e.target);
     e.target.parentElement.remove();
     deleteAlbum(album._id);
   });
@@ -63,8 +63,6 @@ function deleteAlbum(id) {
     });
 }
 
-get();
-
 const form = document.querySelector("form");
 form.addEventListener("submit", e => {
   form.elements.submit.disabled = true;
@@ -77,4 +75,3 @@ form.addEventListener("submit", e => {
 
   post(payload);
 });
-console.log(document.querySelectorAll("article"));
