@@ -465,7 +465,7 @@ abbr:hover {
 /* Util
 ––––––––––––––––––––––––––––––––– */
 .u-readable {
-  max-width: 60ch;
+  max-width: 40ch;
   width: 100%;
 }
 
