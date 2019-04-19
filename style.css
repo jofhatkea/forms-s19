@@ -492,6 +492,9 @@ label,
 input[type="submit"] {
   margin-top: 20px;
 }
-input[type="submit"] {
-  background: lightblue;
+
+input[disabled],
+input[disabled]:hover {
+  background: #e8e8e8;
+  cursor: not-allowed;
 }
