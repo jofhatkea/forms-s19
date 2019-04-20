@@ -13,6 +13,7 @@
       <label> Artist: <input type="text" name="artist" required /> </label>
       <label> Album: <input type="text" name="title" required /> </label>
       <label> Year: <input type="number" name="year" required /> </label>
+      <input type="hidden" name="id" />
       <label>Genres?</label>
       <input type="submit" name="submit" value="save data" />
     </form>
@@ -22,7 +23,8 @@
       <article>
         <h1></h1>
         <h2></h2>
-        <button>Delete Me</button>
+        <button class="edit">Edit Me</button>
+        <button class="delete">Delete Me</button>
       </article>
     </template>
 
